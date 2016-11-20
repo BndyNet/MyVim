@@ -1,0 +1,45 @@
+[submodule "VundleVim/Vundle.vim"]
+	path = "vimfiles/bundle/Vundle.vim"
+	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "mattn/emmet-vim"]
+	path = vimfiles/bundle/emmet-vim
+	url = https://github.com/mattn/emmet-vim.git
+[submodule "scrooloose/nerdtree"]
+	path = vimfiles/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "majutsushi/tagbar"]
+	path = vimfiles/bundle/tagbar
+	url =  https://github.com/majutsushi/tagbar.git
+[submodule "kchmck/vim-coffee-script"]
+	path = vimfiles/bundle/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "plasticboy/vim-markdown"]
+	path = vimfiles/bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "scrooloose/nerdcommenter"]
+	path = vimfiles/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "rkulla/pydiction"]
+	path = vimfiles/bundle/pydiction
+	url = https://github.com/rkulla/pydiction.git
+[submodule "bling/vim-airline"]
+	path = vimfiles/bundle/vim-airline
+	url = https://github.com/bling/vim-airline.git
+[submodule "flazz/vim-colorschemes"]
+	path = vimfiles/bundle/vim-colorschemes
+	url = https://github.com/flazz/vim-colorschemes.git
+[submodule "jistr/vim-nerdtree-tabs"]
+	path = vimfiles/bundle/vim-nerdtree-tabs
+	url = https://github.com/jistr/vim-nerdtree-tabs.git
+[submodule "rvim-syntastic/syntastic"]
+	path = vimfiles/bundle/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "vim-airline/vim-airline-themes"]
+	path = vimfiles/bundle/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "elzr/vim-json"]
+	path = vimfiles/bundle/vim-json
+	url = https://github.com/elzr/vim-json.git
+[submodule "tpope/vim-pathogen"]
+	path = vimfiles/bundle/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen.git
