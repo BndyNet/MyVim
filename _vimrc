@@ -84,6 +84,11 @@ syntax on
 filetype plugin indent on 
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-indent-guides
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 1
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -101,11 +106,19 @@ let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => airline
-let g:airline_theme="molokai" 
-
-"这个是安装字体后 必须设置此项" 
-"https://github.com/ryanoasis/nerd-fonts"
-let g:airline_powerline_fonts = 1   
+"Plugin 'bling/vim-airline'
+let g:airline_powerline_fonts=1 " use powerline fonts
+let g:airline_exclude_filetypes=['netrw','diff','undotree','gundo','tagbar']
+let g:airline_linecolumn_prefix = '▲'
+"let g:airline_section_z='%3p%% '.g:airline_linecolumn_prefix.'%3l:%c'
+let g:airline_detect_whitespace=0 " turn off the whitespace extension
+let g:airline_theme='molokai' " molokai,powerlineish
+"enable/disable showing a summary of changed hunks under source control.
+let g:airline#extensions#hunks#enabled = 1
+"enable/disable showing only non-zero hunks.
+let g:airline#extensions#hunks#non_zero_only = 1
+"set hunk count symbols.
+let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
 
 "打开tabline功能,方便查看Buffer和切换，这个功能比较不错"
 "我还省去了minibufexpl插件，因为我习惯在1个Tab下用多个buffer"
@@ -162,6 +175,21 @@ let g:javascript_conceal_prototype      = "¶"
 let g:javascript_conceal_static         = "•"
 let g:javascript_conceal_super          = "Ω"
 let g:javascript_conceal_arrow_function = "⇒"
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => json
+" vim-json
+let g:vim_json_syntax_conceal = 1
+autocmd BufRead,BufNewFile *.json set filetype=json
+augroup json_autocmd
+  autocmd!
+  autocmd FileType json set autoindent
+  autocmd FileType json set formatoptions=tcq2l
+  autocmd FileType json set textwidth=78 shiftwidth=2
+  autocmd FileType json set softtabstop=2 tabstop=8
+  autocmd FileType json set expandtab
+  "autocmd FileType json set foldmethod=syntax
+augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => coffeescript
