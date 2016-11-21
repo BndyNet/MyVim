@@ -45,6 +45,7 @@ Plugin 'https://github.com/flazz/vim-colorschemes.git'
 "Plugin 'https://github.com/fholgado/minibufexpl.vim'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'pangloss/vim-javascript'
 
 Plugin 'mattn/emmet-vim'
 ""Enable in different mode
@@ -81,6 +82,22 @@ filetype plugin indent on    " required
 call pathogen#infect()  
 syntax on  
 filetype plugin indent on 
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => ctrlp
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+"set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+"let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => airline
@@ -127,7 +144,28 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => html
+autocmd BufRead *.html nmap <F5> :!explorer "file://%:p"<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => javascript
+"Plugin 'pangloss/vim-javascript'
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
+let g:javascript_conceal_function       = "ƒ"
+let g:javascript_conceal_null           = "ø"
+let g:javascript_conceal_this           = "@"
+let g:javascript_conceal_return         = "⇚"
+let g:javascript_conceal_undefined      = "¿"
+let g:javascript_conceal_NaN            = "ℕ"
+let g:javascript_conceal_prototype      = "¶"
+let g:javascript_conceal_static         = "•"
+let g:javascript_conceal_super          = "Ω"
+let g:javascript_conceal_arrow_function = "⇒"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => coffeescript
+"Plugin 'kchmck/vim-coffee-script'
 autocmd FileType coffee setlocal makeprg=coffee\ %
 autocmd BufWritePost *.coffee silent make!
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
