@@ -53,7 +53,5 @@
 	path = vimfiles/bundle/vim-easymotion
 	url = https://github.com/easymotion/vim-easymotion.git
 [submodule "vimfiles/bundle/vim-indent-guides"]
-
 	path = vimfiles/bundle/vim-indent-guides
-
 	url = git://github.com/nathanaelkane/vim-indent-guides.git

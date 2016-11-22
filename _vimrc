@@ -64,18 +64,7 @@ autocmd FileType html,css EmmetInstall
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
 "
-" Brief help
-" :PluginList          - list configured plugins
-" :PluginInstall(!)    - install (update) plugins
-" :PluginSearch(!) foo - search (or refresh cache first) for foo
-" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => pathogen
 " execute pathogen#infect('bundle/{}', '~/src/vim/bundle/{}')
@@ -106,64 +95,21 @@ let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => airline
-let g:airline_theme="molokai" 
-
-"这个是安装字体后 必须设置此项" 
-"https://github.com/ryanoasis/nerd-fonts"
+"Plugin 'bling/vim-airline'
+let g:airline_theme='molokai' " molokai,powerlineish
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
+let g:airline_exclude_filetypes=['netrw','diff','undotree','gundo','tagbar']
+let g:airline_detect_whitespace=0 " turn off the whitespace extension
 
-" unicode symbols
-" let g:airline_left_sep = '»'
-" let g:airline_left_sep = '▶'
-" let g:airline_right_sep = '«'
-" let g:airline_right_sep = '◀'
-" let g:airline_symbols.crypt = '🔒'
-" let g:airline_symbols.linenr = '␊'
-" let g:airline_symbols.linenr = '␤'
-" let g:airline_symbols.linenr = '¶'
-" let g:airline_symbols.maxlinenr = '☰'
-" let g:airline_symbols.maxlinenr = ''
-" let g:airline_symbols.branch = '⎇'
-" let g:airline_symbols.paste = 'ρ'
-" let g:airline_symbols.paste = 'Þ'
-" let g:airline_symbols.paste = '∥'
-" let g:airline_symbols.spell = 'Ꞩ'
-" let g:airline_symbols.notexists = '∄'
-" let g:airline_symbols.whitespace = 'Ξ'
-
-" powerline symbols
-" let g:airline_left_sep = ''
-" let g:airline_left_alt_sep = ''
-" let g:airline_right_sep = ''
-" let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-" let g:airline_symbols.readonly = ''
-" let g:airline_symbols.linenr = ''
-
-" old vim-powerline symbols
-" let g:airline_left_sep = '⮀'
-" let g:airline_left_alt_sep = '⮁'
-" let g:airline_right_sep = '⮂'
-" let g:airline_right_alt_sep = '⮃'
-" let g:airline_symbols.branch = '⭠'
-" let g:airline_symbols.readonly = '⭤'
-" let g:airline_symbols.linenr = '⭡'
-"
-"打开tabline功能,方便查看Buffer和切换，这个功能比较不错"
-"我还省去了minibufexpl插件，因为我习惯在1个Tab下用多个buffer"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = '>'
 
-"设置切换Buffer快捷键"
 nnoremap <C-N> :bn<CR>
 nnoremap <C-P> :bp<CR>
 
-" 关闭状态显示空白符号计数,这个对我用处不大"
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#whitespace#symbol = '!'
 
@@ -195,21 +141,6 @@ let g:NERDTrimTrailingWhitespace = 1
 autocmd BufRead *.html nmap <F5> :!explorer "file://%:p"<CR>
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => json
-" vim-json
-let g:vim_json_syntax_conceal = 1
-autocmd BufRead,BufNewFile *.json set filetype=json
-augroup json_autocmd
-  autocmd!
-  autocmd FileType json set autoindent
-  autocmd FileType json set formatoptions=tcq2l
-  autocmd FileType json set textwidth=78 shiftwidth=2
-  autocmd FileType json set softtabstop=2 tabstop=8
-  autocmd FileType json set expandtab
-  "autocmd FileType json set foldmethod=syntax
-augroup END
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => javascript
 "Plugin 'pangloss/vim-javascript'
 let g:javascript_plugin_jsdoc = 1
@@ -225,6 +156,21 @@ let g:javascript_conceal_prototype      = "¶"
 let g:javascript_conceal_static         = "•"
 let g:javascript_conceal_super          = "Ω"
 let g:javascript_conceal_arrow_function = "⇒"
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => json
+" vim-json
+let g:vim_json_syntax_conceal = 1
+autocmd BufRead,BufNewFile *.json set filetype=json
+augroup json_autocmd
+  autocmd!
+  autocmd FileType json set autoindent
+  autocmd FileType json set formatoptions=tcq2l
+  autocmd FileType json set textwidth=78 shiftwidth=2
+  autocmd FileType json set softtabstop=2 tabstop=8
+  autocmd FileType json set expandtab
+  "autocmd FileType json set foldmethod=syntax
+augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => coffeescript
@@ -347,49 +293,6 @@ nmap <F8> :TagbarToggle<CR>
 " Rename tabs to show tab number.
 " (Based on http://stackoverflow.com/questions/5927952/whats-implementation-of-vims-default-tabline-function)
 """""""""""""""""""""""""""" END """""""""""""""""""""""""""""
-
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer: 
-"       Amir Salihefendic
-"       http://amix.dk - amix@amix.dk
-"
-" Version: 
-"       5.0 - 29/05/12 15:43:36
-"
-" Blog_post: 
-"       http://amix.dk/blog/post/19691#The-ultimate-Vim-configuration-on-Github
-"
-" Awesome_version:
-"       Get this config, nice color schemes and lots of plugins!
-"
-"       Install the awesome version from:
-"
-"           https://github.com/amix/vimrc
-"
-" Syntax_highlighted:
-"       http://amix.dk/vim/vimrc.html
-"
-" Raw_version: 
-"       http://amix.dk/vim/vimrc.txt
-"
-" Sections:
-"    -> General
-"    -> VIM user interface
-"    -> Colors and Fonts
-"    -> Files and backups
-"    -> Text, tab and indent related
-"    -> Visual mode related
-"    -> Moving around, tabs and buffers
-"    -> Status line
-"    -> Editing mappings
-"    -> vimgrep searching and cope displaying
-"    -> Spell checking
-"    -> Misc
-"    -> Helper functions
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
