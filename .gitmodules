@@ -1,52 +1,52 @@
-[submodule "Vundle.vim"]
-	path = "vimfiles/bundle/Vundle.vim"
+[submodule "vimfiles/bundle/Vundle.vim"]
+	path = vimfiles/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
-[submodule "emmet-vim"]
+[submodule "vimfiles/bundle/emmet-vim"]
 	path = vimfiles/bundle/emmet-vim
 	url = https://github.com/mattn/emmet-vim.git
-[submodule "nerdtree"]
+[submodule "vimfiles/bundle/nerdtree"]
 	path = vimfiles/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "tagbar"]
+[submodule "vimfiles/bundle/tagbar"]
 	path = vimfiles/bundle/tagbar
 	url =  https://github.com/majutsushi/tagbar.git
-[submodule "vim-coffee-script"]
+[submodule "vimfiles/bundle/vim-coffee-script"]
 	path = vimfiles/bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule "vim-markdown"]
+[submodule "vimfiles/bundle/vim-markdown"]
 	path = vimfiles/bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
-[submodule "nerdcommenter"]
+[submodule "vimfiles/bundle/nerdcommenter"]
 	path = vimfiles/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "pydiction"]
+[submodule "vimfiles/bundle/pydiction"]
 	path = vimfiles/bundle/pydiction
 	url = https://github.com/rkulla/pydiction.git
-[submodule "vim-airline"]
+[submodule "vimfiles/bundle/vim-airline"]
 	path = vimfiles/bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
-[submodule "vim-colorschemes"]
+[submodule "vimfiles/bundle/vim-colorschemes"]
 	path = vimfiles/bundle/vim-colorschemes
 	url = https://github.com/flazz/vim-colorschemes.git
-[submodule "vim-nerdtree-tabs"]
+[submodule "vimfiles/bundle/vim-nerdtree-tabs"]
 	path = vimfiles/bundle/vim-nerdtree-tabs
 	url = https://github.com/jistr/vim-nerdtree-tabs.git
-[submodule "syntastic"]
+[submodule "vimfiles/bundle/syntastic"]
 	path = vimfiles/bundle/syntastic
 	url = https://github.com/vim-syntastic/syntastic.git
-[submodule "vim-airline-themes"]
+[submodule "vimfiles/bundle/vim-airline-themes"]
 	path = vimfiles/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
-[submodule "vim-json"]
+[submodule "vimfiles/bundle/vim-json"]
 	path = vimfiles/bundle/vim-json
 	url = https://github.com/elzr/vim-json.git
-[submodule "vim-pathogen"]
+[submodule "vimfiles/bundle/vim-pathogen"]
 	path = vimfiles/bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
-[submodule "vim-javascript"]
+[submodule "vimfiles/bundle/vim-javascript"]
 	path = vimfiles/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
-[submodule "ctrlp.vim"]
+[submodule "vimfiles/bundle/ctrlp.vim"]
 	path = vimfiles/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
 [submodule "vimfiles/bundle/vim-easymotion"]
