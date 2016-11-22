@@ -8,7 +8,7 @@ set rnu!
 set listchars=tab:>-,trail:-,extends:>,precedes:<,nbsp:%
 set list!
 if has('win32')
-  set guifont=Inconsolata_for_Powerline:h11:cANSI
+  set guifont=DejaVu_Sans_Mono_for_Powerline:h10:cANSI
   "set guifont=Literation_Mono_Powerline:h11:cANSI
 endif
 set clipboard=unnamed
@@ -267,12 +267,14 @@ highlight BookmarkLine ctermbg=194 ctermfg=NONE
 "nmap <Leader>x <Plug>ClearAllBookmarks
 
 let g:bookmark_sign = '*'	"default: ⚑, Sets bookmark icon for sign column
-let g:bookmark_annotation_sign = 'a'	"default: ☰, Sets bookmark annotation icon for sign column
+let g:bookmark_annotation_sign = '☰'	"default: ☰, Sets bookmark annotation icon for sign column
 let g:bookmark_auto_save = 1	"default: 1, Enables/disables automatic saving for bookmarks
 let g:bookmark_auto_save_file = '/bookmarks'	"default: ~/.vim-bookmarks	Sets file for auto saving
-let g:bookmark_highlight_lines = 1	"default: 0,	Enables/disables line highlighting
+let g:bookmark_save_per_working_dir = 1
+let g:bookmark_highlight_lines = 0	"default: 0,	Enables/disables line highlighting
 let g:bookmark_show_warning = 1	 "default: 1,	Enables/disables warning when clearing all bookmarks
 let g:bookmark_center = 1	"default: 0,	Enables/disables line centering when jumping to bookmark
+let g:bookmark_location_list = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

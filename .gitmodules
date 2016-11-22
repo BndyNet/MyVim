@@ -55,3 +55,6 @@
 [submodule "vimfiles/bundle/vim-indent-guides"]
 	path = vimfiles/bundle/vim-indent-guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "vimfiles/bundle/vim-bookmarks"]
+	path = vimfiles/bundle/vim-bookmarks
+	url = https://github.com/MattesGroeger/vim-bookmarks.git
