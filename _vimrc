@@ -8,8 +8,8 @@ set rnu!
 set listchars=tab:>-,trail:-,extends:>,precedes:<,nbsp:%
 set list!
 if has('win32')
-  set guifont=Inconsolata:h11:cANSI
-  "set guifontwide=Microsoft_YaHei_Mono:h12
+  set guifont=Inconsolata_for_Powerline:h11:cANSI
+  "set guifont=Literation_Mono_Powerline:h11:cANSI
 endif
 set clipboard=unnamed
 " set windows size
@@ -84,6 +84,11 @@ syntax on
 filetype plugin indent on 
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-indent-guides
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 1
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -105,12 +110,54 @@ let g:airline_theme="molokai"
 
 "这个是安装字体后 必须设置此项" 
 "https://github.com/ryanoasis/nerd-fonts"
-let g:airline_powerline_fonts = 1   
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
 
+" unicode symbols
+" let g:airline_left_sep = '»'
+" let g:airline_left_sep = '▶'
+" let g:airline_right_sep = '«'
+" let g:airline_right_sep = '◀'
+" let g:airline_symbols.crypt = '🔒'
+" let g:airline_symbols.linenr = '␊'
+" let g:airline_symbols.linenr = '␤'
+" let g:airline_symbols.linenr = '¶'
+" let g:airline_symbols.maxlinenr = '☰'
+" let g:airline_symbols.maxlinenr = ''
+" let g:airline_symbols.branch = '⎇'
+" let g:airline_symbols.paste = 'ρ'
+" let g:airline_symbols.paste = 'Þ'
+" let g:airline_symbols.paste = '∥'
+" let g:airline_symbols.spell = 'Ꞩ'
+" let g:airline_symbols.notexists = '∄'
+" let g:airline_symbols.whitespace = 'Ξ'
+
+" powerline symbols
+" let g:airline_left_sep = ''
+" let g:airline_left_alt_sep = ''
+" let g:airline_right_sep = ''
+" let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+" let g:airline_symbols.readonly = ''
+" let g:airline_symbols.linenr = ''
+
+" old vim-powerline symbols
+" let g:airline_left_sep = '⮀'
+" let g:airline_left_alt_sep = '⮁'
+" let g:airline_right_sep = '⮂'
+" let g:airline_right_alt_sep = '⮃'
+" let g:airline_symbols.branch = '⭠'
+" let g:airline_symbols.readonly = '⭤'
+" let g:airline_symbols.linenr = '⭡'
+"
 "打开tabline功能,方便查看Buffer和切换，这个功能比较不错"
 "我还省去了minibufexpl插件，因为我习惯在1个Tab下用多个buffer"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '>'
 
 "设置切换Buffer快捷键"
 nnoremap <C-N> :bn<CR>
@@ -146,6 +193,22 @@ let g:NERDTrimTrailingWhitespace = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => html
 autocmd BufRead *.html nmap <F5> :!explorer "file://%:p"<CR>
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => json
+" vim-json
+let g:vim_json_syntax_conceal = 1
+autocmd BufRead,BufNewFile *.json set filetype=json
+augroup json_autocmd
+  autocmd!
+  autocmd FileType json set autoindent
+  autocmd FileType json set formatoptions=tcq2l
+  autocmd FileType json set textwidth=78 shiftwidth=2
+  autocmd FileType json set softtabstop=2 tabstop=8
+  autocmd FileType json set expandtab
+  "autocmd FileType json set foldmethod=syntax
+augroup END
+"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => javascript
 "Plugin 'pangloss/vim-javascript'
