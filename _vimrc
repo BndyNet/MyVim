@@ -54,7 +54,7 @@ Plugin 'mattn/emmet-vim'
 "let g:user_emmet_mode='a'    "enable all function in all mode.
 ""Enable just for html/css
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+autocmd FileType html,cshtml,css EmmetInstall
 ""Redefine trigger key
 "let g:user_emmet_leader_key='<C-Z>'
 
@@ -139,6 +139,11 @@ let g:NERDTrimTrailingWhitespace = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => html
 autocmd BufRead *.html nmap <F5> :!explorer "file://%:p"<CR>
+autocmd BufRead,BufNewFile *.cshtml set filetype=html
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => markdown
+let g:vim_markdown_folding_disabled = 1
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => javascript
